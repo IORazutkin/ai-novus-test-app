@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <sorted-list :items="taskList" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SortedList from './components/SortedList'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: { SortedList },
+  data () {
+    return {
+      taskList: [
+        {
+          id: 1,
+          message: 'Купить молока и Nesquik'
+        }, {
+          id: 2,
+          message: 'Сдать тестовое задание в Ай-Новус'
+        }, {
+          id: 3,
+          message: 'Разобраться с DOM-событиями drag и drop'
+        }, {
+          id: 4,
+          message: 'Научиться выводить линию между этими задачами по наведению draggable объекта (опционально)'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -21,8 +37,6 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
